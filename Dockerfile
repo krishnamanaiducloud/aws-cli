@@ -2,8 +2,6 @@ FROM alpine:3.10.2
 
 ENV AWSCLI_VERSION "1.16.230"
 
-COPY keep_live.sh ./
-
 RUN apk add --update \
     python \
     python-dev \
@@ -14,7 +12,5 @@ RUN apk add --update \
     && rm -rf /var/cache/apk/*
 
 VOLUME /root/.aws
-
-CMD ["sh" , "keep_live.sh"]
 
 ENTRYPOINT ["/root/.local/bin/aws"]
