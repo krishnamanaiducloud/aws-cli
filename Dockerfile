@@ -13,4 +13,4 @@ RUN apk add --update \
 
 VOLUME /root/.aws
 
-CMD ["/root/.local/bin/aws"]
+ENTRYPOINT ["/root/.local/bin/aws"]
